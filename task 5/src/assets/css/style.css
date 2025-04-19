@@ -1,0 +1,159 @@
+:root {
+    --primary-color: #01014e;
+    --white: #ffffff;
+    --bg-color: #f0f8ff;
+    --primary-font: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font)
+}
+
+h1 {
+    font-size: 80px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+}
+
+p {
+    font-size: 36px;
+    line-height: 1.5;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+.btn {
+    outline: none;
+    border: 2px solid transparent;
+    text-decoration: none;
+    cursor: pointer;
+    min-width: 200px;
+    min-height: 60px;
+    text-transform: capitalize;
+    vertical-align: middle;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    color: var(--white);
+    font-size: 30px;
+    font-family: var(--primary-font);
+    font-weight: 500;
+    padding: 4px 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-primary {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover:enabled {
+    background: transparent;
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.banner-container {
+    display: flex;
+    background: var(--bg-color);
+}
+
+.banner-content {
+    padding: 200px;
+    background-color: antiquewhite;
+    display: flex;
+    align-items: center;
+    width: 60%;
+}
+
+.banner-content h1,
+.banner-content p {
+    margin-bottom: 30px;
+}
+
+.banner-img {
+    width: 40%;
+}
+
+.banner-img img {
+    object-fit: cover;
+}
+
+@media (max-width: 2559px) {
+    h1 {
+        font-size: 60px;
+    }
+
+    p,
+    .btn {
+        font-size: 24px;
+    }
+
+    .banner-content {
+        padding: 150px;
+    }
+}
+
+@media (max-width: 1919px) {
+    h1 {
+        font-size: 50px;
+    }
+
+    p,
+    .btn {
+        font-size: 16px;
+    }
+
+    .btn{
+        min-height: 40px;
+        min-width: 150px;
+    }
+
+    .banner-content {
+        padding: 100px;
+    }
+
+    .banner-content h1, .banner-content p{
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 1279px) {
+    h1 {
+        font-size: 40px;
+    }
+
+    .banner-content {
+        padding: 50px;
+    }
+}
+
+@media (max-width: 767px) {
+
+    h1{
+        font-size: 36px;
+    }
+
+    .banner-container {
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+    }
+
+    .banner-content{
+        padding: 20px;
+    }
+
+    .banner-content,
+    .banner-img {
+        width: 100%;
+    }
+
+
+}
