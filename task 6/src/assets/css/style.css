@@ -1,0 +1,49 @@
+:root {
+    --primary-color: #800080;
+    --white: #ffffff;
+    --primary-font: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font)
+}
+
+.parent-container{
+    display: flex;
+    gap: 20px;
+    color: var(--white);
+    line-height: 1.5;
+}
+
+.parent-sec{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.box-sec{
+    height: 100vh;
+    flex: 1;
+    overflow: auto;
+}
+
+.child-sec, .fixed-sec{
+    background: var(--primary-color);
+    padding: 20px;
+}
+
+.child-sec{
+    height: 50%;
+    overflow-y: auto;
+    flex: none;
+}
+
+@media (max-width: 767px) {
+    .parent-container{
+        flex-direction: column;
+    }
+
+}

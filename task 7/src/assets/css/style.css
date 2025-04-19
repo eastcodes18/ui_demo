@@ -1,0 +1,204 @@
+:root {
+    --primary-color: #806d00;
+    --secondary-color: #800080;
+    --white: #ffffff;
+    --primary-font: Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font)
+}
+
+li{
+    list-style: none;
+}
+
+picture{
+    display: inline-block;
+}
+
+header{
+    padding: 20px;
+    display: flex;
+    background-color: var(--secondary-color);
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    color: var(--white);
+}
+
+.main-page{
+    padding: 50px;
+    text-align: center;
+    font-size: 20px;
+}
+.btn{
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--white);
+    min-width: 100px;
+    min-height: 40px;
+    font-size: 16px;
+    padding: 10px;
+    background: transparent;
+    color: var(--white);
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-primary{
+    background: var(--secondary-color);
+}
+
+.btn-primary:hover:enabled{
+    background: var(--white);
+    color: var(--secondary-color);
+}
+
+.menu{
+    display: flex;
+    gap: 20px;
+}
+.menu img{
+    object-fit: cover;
+}
+
+.main-container{
+    display: grid;
+    gap: 10px;
+    height: 100vh;
+}
+
+.main-container div{
+    padding: 20px;
+    overflow: auto;
+}
+
+.layout1 .main-container{
+    grid-template-areas: 'area1'
+    'area2'
+    'area3'
+    'area4';
+    grid-template-rows: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
+}
+
+.layout2 .main-container{
+    grid-template-areas: 'area1 area2 area3 area4';
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.layout3 .main-container{
+    grid-template-areas: 'area1 area2'
+    'area3 area4' ;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: minmax(200px, 1fr) minmax(200px,1fr);
+}
+
+.layout4 .main-container{
+    grid-template-areas: 'area1 area2 area2'
+    'area3 area3 area4'
+    'area5 area5 area5';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(200px, 1fr) minmax(200px,1fr) minmax(200px,1fr);
+}
+
+.layout5 .main-container{
+    grid-template-areas: 'area1 area2 area2'
+    'area1 area3 area4'
+    'area5 area5 area5';
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(200px, 1fr) minmax(200px,1fr) minmax(200px,1fr);
+}
+
+.layout6 .main-container{
+    grid-template-areas: 'area1 area1 area2'
+    'area3 area4 area4'
+    'area5 area5 area6' ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(200px, 1fr) minmax(200px,1fr) minmax(200px,1fr);
+}
+
+.layout7 .main-container{
+    grid-template-areas: 'area1 area2 area2'
+    'area3 area2 area2'
+    'area4 area5 area6' ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(200px, 1fr) minmax(200px,1fr) minmax(200px,1fr);
+}
+
+.layout8 .main-container{
+    grid-template-areas: 'area1 area1 area2'
+    'area1 area1 area3'
+    'area4 area5 area5' ;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: minmax(200px, 1fr) minmax(200px,1fr) minmax(200px,1fr);
+}
+
+
+.sec1{
+    grid-area: area1;
+    background: #C69C72;
+}
+
+.sec2{
+    grid-area: area2;
+    background: #B6D369;
+}
+
+.sec3{
+    grid-area: area3;
+    background: plum;
+}
+
+.sec4{
+    grid-area: area4;
+    background: rgb(255, 168, 204);
+}
+
+.sec5{
+    grid-area: area5;
+    background: #f7e78c;
+}
+
+.sec6{
+    grid-area: area6;
+    background: #A07178;
+}
+
+@media (max-width: 767px) {
+    .layout2 .main-container, .layout3 .main-container{
+        grid-template-areas: 'area1'
+        'area2'
+        'area3'
+        'area4';
+        grid-template-columns: none;
+        grid-template-rows: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
+    }
+
+    .layout4 .main-container, .layout5 .main-container, .layout8 .main-container{
+        grid-template-areas: 'area1'
+        'area2'
+        'area3'
+        'area4'
+        'area5';
+        grid-template-columns: none;
+        grid-template-rows: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
+    }
+
+    .layout6 .main-container, .layout7 .main-container{
+        grid-template-areas: 'area1'
+        'area2'
+        'area3'
+        'area4'
+        'area5'
+        'area6';
+        grid-template-columns: none;
+        grid-template-rows: minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr) minmax(200px, 1fr);
+    }
+}

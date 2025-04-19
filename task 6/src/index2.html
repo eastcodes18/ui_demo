@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Scrollable content section demo">
+    <meta name="keywords" content="html, css, scrollable content">
+    <meta name="author" content="Prachi chauhan">
+    <title>Task 6-B</title>
+    <link rel="stylesheet" href="assets/css/style2.css">
+</head>
+<body>
+    <header class="header">
+        <h2>Grid Demo</h2>
+        <div class="header-menu">
+            <button type="button" class="btn btn-primary">Select Layout</button>
+            <ul class="submenu">
+                <li>
+                    <button onclick="layout1()">
+                        <picture>
+                            <img src="assets/images/L1" alt="layout1" width="50" height="50">
+                        </picture>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="layout2()">
+                        <picture>
+                            <img src="assets/images/L2" alt="layout2" width="50" height="50">
+                        </picture>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="layout3()">
+                        <picture>
+                            <img src="assets/images/L3" alt="layout3" width="50" height="50">
+                        </picture>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="layout4()">
+                        <picture>
+                            <img src="assets/images/L4" alt="layout4" width="50" height="50">
+                        </picture>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="layout5()">
+                        <picture>
+                            <img src="assets/images/L5" alt="layout5" width="50" height="50">
+                        </picture>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="layout6()">
+                        <picture>
+                            <img src="assets/images/L6" alt="layout6" width="50" height="50">
+                        </picture>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="layout7()">
+                        <picture>
+                            <img src="assets/images/L7" alt="layout7" width="50" height="50">
+                        </picture>
+                    </button>
+                </li>
+                <li>
+                    <button onclick="layout8()">
+                        <picture>
+                            <img src="assets/images/L8" alt="layout8" width="50" height="50">
+                        </picture>
+                    </button>
+                </li>
+            </ul>
+        </div>
+
+    </header>
+
+    <main>
+        <div class="main-container" id="main_container">
+            <div class="sec1">1</div>
+            <div class="sec2">2</div>
+            <div class="sec3">3</div>
+            <div class="sec4">4</div>
+            <div class="sec5" id="sec5">5</div>
+            <div class="sec6" id="sec6">6</div>
+        </div>
+    </main>
+
+    <script>
+        const mainContainer = document.getElementById('main_container');
+        const sec5 = document.getElementById('sec5');
+        const sec6 = document.getElementById('sec6');
+
+        function clearGrid(){
+            mainContainer.style.gridTemplateColumns = 'none';
+            mainContainer.style.gridTemplateRows = 'none';
+            sec5.style.display = 'none';
+            sec6.style.display ='none';
+        }
+
+        function gridOf3(){
+            mainContainer.style.gridTemplateColumns = '1fr 1fr 1fr';
+            mainContainer.style.gridTemplateRows = 'minmax(150px, 1fr) minmax(150px,1fr) minmax(150px,1fr)';
+        }
+
+        function layout1(){
+            clearGrid();
+            mainContainer.style.gridTemplateAreas = `'area1'
+                                                    'area2'
+                                                    'area3'
+                                                    'area4'`;
+            mainContainer.style.gridTemplateRows = 'minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr) minmax(150px, 1fr)';
+            sec5.style.display = 'none';
+        }
+
+        function layout2(){
+            clearGrid();
+            mainContainer.style.gridTemplateAreas = `'area1 area2 area3 area4'`;
+            mainContainer.style.gridTemplateColumns ='1fr 1fr 1fr 1fr';
+        }
+
+        function layout3(){
+            clearGrid();
+            mainContainer.style.gridTemplateAreas = `'area1 area2'
+                                                    'area3 area4'`;
+            mainContainer.style.gridTemplateColumns = '1fr 1fr';
+            mainContainer.style.gridTemplateRows = 'minmax(150px, 1fr) minmax(150px, 1fr)';
+            sec5.style.display = 'none';
+        }
+
+        function layout4(){
+            clearGrid();
+            mainContainer.style.gridTemplateAreas = `'area1 area2 area2'
+                                                    'area3 area3 area4'
+                                                    'area5 area5 area5'`;
+            gridOf3();
+            sec5.style.display = 'block';
+        }
+
+        function layout5(){
+            clearGrid();
+            mainContainer.style.gridTemplateAreas = `'area1 area2 area2'
+                                                    'area1 area3 area4'
+                                                    'area5 area5 area5 '`;
+            gridOf3();
+            sec5.style.display = 'block';
+        }
+
+        function layout6(){
+            clearGrid();
+            mainContainer.style.gridTemplateAreas = `'area1 area1 area2'
+                                                    'area3 area4 area4'
+                                                    'area5 area5 area6'`;
+            gridOf3();
+            sec5.style.display = 'block';
+            sec6.style.display ='block';
+        }
+
+        function layout7(){
+            clearGrid();
+            mainContainer.style.gridTemplateAreas = `'area1 area2 area2'
+                                                    'area3 area2 area2'
+                                                    'area4 area5 area6'`;
+            gridOf3();
+            sec5.style.display = 'block';
+            sec6.style.display ='block';
+        }
+
+        function layout8(){
+            clearGrid();
+            mainContainer.style.gridTemplateAreas = `'area1 area1 area2'
+                                                    'area1 area1 area3'
+                                                    'area4 area5 area5'`;
+            gridOf3();
+            sec5.style.display = 'block';
+        }
+    </script>
+</body>
+</html>
